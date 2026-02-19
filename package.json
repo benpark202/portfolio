@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio site build tooling",
+  "scripts": {
+    "build:css": "cleancss -O2 -o styles.min.css styles.css",
+    "watch:css": "chokidar \"styles.css\" -c \"npm run build:css\"",
+    "build": "npm run build:css",
+    "start": "npm run build && node server.js",
+    "dev:server": "nodemon server.js",
+    "dev": "npm run build:css && concurrently \"npm:watch:css\" \"npm:dev:server\""
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "clean-css-cli": "^4.0.12",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10"
+  }
+}
