@@ -5,8 +5,9 @@
   "description": "Portfolio site build tooling",
   "scripts": {
     "build:css": "cleancss -O2 -o styles.min.css styles.css",
+    "build:dist": "rm -rf dist && mkdir -p dist && cp -R index.html styles.min.css assets lib CNAME forms dist",
     "watch:css": "chokidar \"styles.css\" -c \"npm run build:css\"",
-    "build": "npm run build:css",
+    "build": "npm run build:css && npm run build:dist",
     "start": "npm run build && node server.js",
     "dev:server": "nodemon server.js",
     "dev": "npm run build:css && concurrently \"npm:watch:css\" \"npm:dev:server\""
