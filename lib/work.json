@@ -4,19 +4,19 @@
       "name": "matchai",
       "year": 2026,
       "screenshot": "assets/project-thumbnails/matchai-thumbnail.png",
-      "description": "matchai is an indev platform to help manage all the information in your daily life. Customizable widgets from daily tasks, workouts, mood logging, calendar events, and more are all intergrated and can be changed, reordered to however you desire."
+      "description": "Matchai is a modern life dashboard in development that aims to simplify the management of complex page setups by providing a view of all your routines and to-do’s at a glance. It eliminates the need for users to spend hours setting up dashboards by offering customizable pre-functioning “widgets” that cover everything from daily tasks, workouts, calendar events, mood logs, and more."
     },
     {
       "name": "wayvilo",
       "year": 2026,
       "screenshot": "assets/project-thumbnails/wayvilo-thumbnail.png",
-      "description": "wayvilo was a washington metro transit pwa that allowed riders to plan their trip in advance through a delightful user interface and helpful information including navigation, delays, and average train headways. it functioned similarly to the app transit or apple maps, but tailored to just wmata's system. while the project has not received any recent developments, i am planning to design and developing another transit app in the near future!"
+      "description": "Wayvilo was a Washington Metro PWA that provided users a simple way to plan trips. It functioned similarly to the app, “Transit,” tailoring to WMATA’s system. It provided details such as trip directions, next train headways, and fare estimations, all in a clean, addles design. While the project has been discontinued, I am planning to develop another app for DC in the near future. "
     },
     {
       "name": "pask",
       "year": 2025,
       "screenshot": "assets/project-thumbnails/pask-thumbnail.png",
-      "description": "pask was a submission for the wwdc25 swift student challenge submission that aimed to teach the basics of personal online security in an engaging, gamified way, drawing inspiration from apps like duolingo.",
+      "description": "Pask was my submission for the 2025 WWDC Student Swift Challenge, which aimed to teach the fundamentals of online security in an fun and engaging manner, inspired off of Duolingo's simple yet gamified design. The objective is to secure the vault by completing quests, which challenge users to redeem “key fragments” by gaining security knowledge. ",
       "buttons": [
         { "label": "github", "link": "#" }
       ]
