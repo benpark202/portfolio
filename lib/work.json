@@ -10,7 +10,7 @@
       "name": "wayvilo",
       "year": 2026,
       "screenshot": "assets/project-thumbnails/wayvilo-thumbnail.png",
-      "description": "Wayvilo was a Washington Metro PWA that provided users a simple way to plan trips. It functioned similarly to the app, “Transit,” tailoring to WMATA’s system. It provided details such as trip directions, next train headways, and fare estimations, all in a clean, addles design. While the project has been discontinued, I am planning to develop another app for DC in the near future. "
+      "description": "Wayvilo was a Washington Metro PWA that provided users a simple way to plan trips. It functioned similarly to the app, “Transit,” tailoring to WMATA’s system. It provided details such as trip directions, next train headways, and fare estimations, all in a clean, adless design. While the project has been discontinued, I am planning to develop another app for DC in the near future. "
     },
     {
       "name": "pask",
