@@ -16,7 +16,7 @@
       "name": "pask",
       "year": 2025,
       "screenshot": "assets/project-thumbnails/pask-thumbnail.png",
-      "description": "Pask was my submission for the 2025 WWDC Student Swift Challenge, which aimed to teach the fundamentals of online security in an fun and engaging manner, inspired off of Duolingo's simple yet gamified design. The objective is to secure the vault by completing quests, which challenge users to redeem “key fragments” by gaining security knowledge. ",
+      "description": "Pask was my submission for the 2025 WWDC Student Swift Challenge, which aimed to teach the fundamentals of online security in an fun and engaging way. Inspired off of Duolingo's gamified design, users were challenged to secure a vault by completing quests. Users had to to redeem “key fragments” by completing security questions and gaining knowledge. ",
       "buttons": [
         { "label": "github", "link": "#" }
       ]
