@@ -109,6 +109,43 @@
       </a>
       <div id="work-links" class="work-links"></div>
     </main>
+    <div
+      id="project-modal"
+      class="project-modal is-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="project-modal-title"
+    >
+      <div class="project-modal-backdrop" data-project-modal-close></div>
+      <div class="project-modal-panel" role="document">
+        <div class="project-modal-content">
+          <button
+            id="project-modal-close"
+            class="project-modal-close"
+            type="button"
+            aria-label="close project details"
+          >
+            <span class="material-symbols-rounded material-glyph">close_fullscreen</span>
+          </button>
+          <h2 id="project-modal-title" class="project-modal-title"></h2>
+          <p id="project-modal-description" class="project-modal-description"></p>
+          <div id="project-modal-buttons" class="project-modal-buttons"></div>
+          <div id="project-modal-title-display" class="project-modal-title-display" aria-hidden="true"></div>
+          <div id="project-modal-year-display" class="project-modal-year-display" aria-hidden="true"></div>
+          <div class="project-modal-title-track" aria-hidden="true">
+            <div id="project-modal-title-marquee" class="project-modal-title-marquee">
+              <span id="project-modal-title-run-a" class="project-modal-title-run">title ● title ● title ●</span>
+              <span id="project-modal-title-run-b" class="project-modal-title-run">title ● title ● title ●</span>
+            </div>
+          </div>
+        </div>
+        <div id="project-modal-media" class="project-modal-media is-empty">
+          <img id="project-modal-image" class="project-modal-image" alt="" />
+          <div class="project-modal-placeholder">there was a problem loading this preview.</div>
+        </div>
+      </div>
+    </div>
     <div id="custom-cursor" class="custom-cursor" aria-hidden="true"></div>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="switch to dark mode">
       <span class="theme-glyph" aria-hidden="true">
