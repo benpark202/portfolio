@@ -700,6 +700,7 @@ body.is-project-modal-open {
 }
 
 :root[data-theme="dark"] .project-modal-content {
+  background: #151617;
   border-color: rgba(233, 240, 243, 0.2);
 }
 
@@ -723,6 +724,9 @@ body.is-project-modal-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
   opacity: 1;
   transition: opacity 220ms ease;
 }

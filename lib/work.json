@@ -4,13 +4,13 @@
       "name": "matchai",
       "year": 2026,
       "screenshot": "assets/project-thumbnails/matchai-thumbnail.png",
-      "description": "Matchai is a modern life dashboard in development that aims to simplify complex page setups by providing a single view of all your routines and to-do’s at a glance. It eliminates the need for hours of setup by offering customizable pre-functioning “widgets” that cover everything from daily tasks, workouts, calendar events, mood logs, and more."
+      "description": "Matchai is a modern life dashboard in development that aims to simplify complex page setups by providing a single view of all routines and to-do’s at a glance. It eliminates the need for hours of investment using customizable widgets from calendars, daily tasks, workouts, and more."
     },
     {
       "name": "wayvilo",
       "year": 2025,
       "screenshot": "assets/project-thumbnails/wayvilo-thumbnail.png",
-      "description": "Wayvilo was a Washington Metro PWA that provided users a simple platform to plan their trip on DC transit. It functioned similarly to the app, “Transit,” using a Node.js framework, alongside a combination of DMV transit API's and public GTFS feeds to predict trip headways and fare costs. "
+      "description": "Wayvilo was a Washington Metro PWA that provided users a simple platform to plan their trip on DC transit. It functioned similarly to the app, “Transit,” built on Node.js and a combination of transit API's and GTFS feeds to predict train headways and fare costs. "
     },
     {
       "name": "pask",
