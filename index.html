@@ -36,7 +36,11 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
     <link rel="stylesheet" href="styles.min.css" />
   </head>
@@ -105,10 +109,126 @@
         <span class="hover-icon" aria-hidden="true"
           ><span class="material-symbols-rounded material-glyph">list_alt</span
         ></span>
-        resume
+        about
       </a>
       <div id="work-links" class="work-links"></div>
     </main>
+    <section
+      id="resume-screen"
+      class="resume-screen is-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-label="resume summary"
+      tabindex="-1"
+    >
+      <div class="resume-screen-inner">
+        <div class="resume-bento" aria-label="resume summary cards">
+          <article class="resume-card resume-card-small resume-card-1">
+            <strong class="resume-experience-value">11+</strong>
+            <span class="resume-experience-subvalue">years of coding experience</span>
+          </article>
+          <article class="resume-card resume-card-small resume-card-2">
+            <strong class="resume-card-value resume-freelance-value">freelance web developer</strong>
+            <span class="resume-freelance-range">since 2023</span>
+          </article>
+          <article class="resume-card resume-card-small resume-card-4">
+            <img
+              class="resume-location-image"
+              src="./assets/location.png"
+              alt="north america globe view"
+              draggable="false"
+            />
+            <strong class="resume-location-value">based in washington dc</strong>
+          </article>
+          <article class="resume-card resume-card-center">
+            <div class="resume-photo-placeholder">
+              <img
+                class="resume-photo-image"
+                src="./assets/resume-background.png"
+                alt="ben portrait"
+                draggable="false"
+              />
+              <span class="resume-photo-name">ben</span>
+            </div>
+          </article>
+          <article class="resume-card resume-card-small resume-card-6">
+            <div class="resume-stack-scroll resume-framework-scroll" aria-label="framework icons">
+              <div class="resume-stack-track">
+                <div class="resume-stack-set">
+                  <span class="resume-stack-icon"><i class="fa-brands fa-node-js" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-react" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="devicon-tailwindcss-plain" aria-hidden="true"></i></span>
+                </div>
+                <div class="resume-stack-set" aria-hidden="true">
+                  <span class="resume-stack-icon"><i class="fa-brands fa-node-js" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-react" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="devicon-tailwindcss-plain" aria-hidden="true"></i></span>
+                </div>
+              </div>
+            </div>
+            <span class="resume-card-label">frameworks</span>
+          </article>
+          <article class="resume-card resume-card-small resume-card-7">
+            <div class="resume-stack-scroll" aria-label="language tech stack icons">
+              <div class="resume-stack-track">
+                <div class="resume-stack-set">
+                  <span class="resume-stack-icon"><i class="fa-brands fa-js" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-java" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="devicon-typescript-plain" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
+                </div>
+                <div class="resume-stack-set" aria-hidden="true">
+                  <span class="resume-stack-icon"><i class="fa-brands fa-js" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-java" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="devicon-typescript-plain" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
+                </div>
+              </div>
+            </div>
+            <span class="resume-card-label">language tech stack</span>
+          </article>
+          <article class="resume-card resume-card-small resume-card-10">
+            <strong class="resume-ml-value">
+              <span class="material-symbols-rounded material-glyph resume-ml-icon" aria-hidden="true">graph_5</span>
+              <span class="resume-ml-text">ml</span>
+            </strong>
+            <span class="resume-experience-subvalue">currently exploring</span>
+          </article>
+          <article class="resume-card resume-card-small resume-card-11">
+            <img
+              class="resume-matcha-logo"
+              src="./assets/matchaiDarkLogo.png"
+              alt="matchai logo"
+              draggable="false"
+            />
+            <div class="resume-matcha-copy">
+              <strong class="resume-matcha-title">matchai</strong>
+              <span class="resume-matcha-subtitle">latest project</span>
+            </div>
+          </article>
+          <a
+            class="resume-card resume-card-small resume-card-12 resume-card-link"
+            href="https://github.com/benpark202"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="benpark202 on github"
+          >
+            <div class="resume-contact-graph" aria-hidden="true"></div>
+            <strong class="resume-contact-handle">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span>benpark202</span>
+            </strong>
+          </a>
+        </div>
+      </div>
+    </section>
     <div
       id="project-modal"
       class="project-modal is-hidden"
