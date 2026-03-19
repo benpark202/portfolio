@@ -7,6 +7,12 @@
       "description": "Matchai is a modern life dashboard in development that aims to simplify complex page setups by providing a single view of all routines and to-do’s at a glance. It eliminates the need for hours of investment using customizable widgets from calendars, daily tasks, workouts, and more."
     },
     {
+      "name": "skin cancer poster",
+      "year": 2026,
+      "screenshot": "assets/project-thumbnails/skin-cancer-poster.png",
+      "description": "An informative poster for my Advanced Placement Biology class that provides an overview of different varients of skin cancer, their symptoms, risk factors, statistics, and prevention tips."
+    },
+    {
       "name": "wayvilo",
       "year": 2025,
       "screenshot": "assets/project-thumbnails/wayvilo-thumbnail.png",

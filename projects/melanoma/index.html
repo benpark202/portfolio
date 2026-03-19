@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Melanoma Bento</title>
+    <meta
+      name="description"
+      content="Single-screen melanoma overview displayed as a fixed bento dashboard."
+    />
+    <link rel="stylesheet" href="/projects/melanoma/styles.css" />
+    <script src="/projects/melanoma/script.js" defer></script>
+  </head>
+  <body>
+    <main class="board" aria-label="Single-screen melanoma information bento layout">
+      <article class="card card-variants">
+        <p class="variants-list" aria-label="Common skin cancer variants">
+          <span class="tone-dark">Cutaneous T-Cell Lymphoma</span>
+          <span class="tone-mid">Squamous Cell</span>
+          <span class="tone-mid">Basal Cell Carcinoma</span>
+          <span class="tone-mid">Kaposi Sarcoma</span>
+          <span class="tone-dark">Melanoma</span>
+        </p>
+        <p class="card-label card-label-strong">Common Variants</p>
+      </article>
+
+      <article class="card card-survival">
+        <p class="percent-copy"><span>99</span>%</p>
+        <p class="card-label">Survival Rate</p>
+      </article>
+
+      <article class="card card-sky">
+        <img
+          class="sky-image"
+          src="/assets/cancer-project/sky.jpg"
+          alt=""
+          aria-hidden="true"
+        />
+        <p class="sky-copy">
+          Caused by DNA damage
+          <br />
+          due to UV
+        </p>
+      </article>
+
+      <article class="card card-hereditary">
+        <div class="risk-orb" aria-hidden="true"></div>
+        <p class="card-label card-label-strong">MC1R Genetic Risk</p>
+      </article>
+
+      <article class="card card-mitigation">
+        <h2 class="stack-list" aria-label="SPF 30 plus, Monthly Checkups, Avoid Tanning, Sunglasses">
+          <span class="tone-dark">SPF 30+</span>
+          <span class="tone-mid">Monthly Checkups</span>
+          <span class="tone-strike">Tanning</span>
+          <span class="tone-mid">Sunglasses</span>
+        </h2>
+        <p class="card-label">Mitigations &amp; Protection</p>
+      </article>
+
+      <article class="card card-risk">
+        <p class="percent-copy"><span>5-10</span>%</p>
+        <p class="card-label">Hereditary Cases</p>
+      </article>
+
+      <article class="card card-mole">
+        <img
+          class="mole-image"
+          src="/assets/cancer-project/melanoma_exhibit.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <h2 class="image-heading">Mole Indicators</h2>
+      </article>
+
+      <article class="card card-hero">
+        <img
+          class="hero-image"
+          src="/assets/cancer-project/skin-cancer-center.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <h1 class="hero-copy">Skin Cancer</h1>
+      </article>
+
+      <article class="card card-abcde">
+        <dl class="abcde-list">
+          <div>
+            <dt>Asymmetry</dt>
+          </div>
+          <div>
+            <dt>Border irregular</dt>
+          </div>
+          <div>
+            <dt>Color variation</dt>
+          </div>
+          <div>
+            <dt>Diameter &gt; 6m</dt>
+          </div>
+          <div>
+            <dt>Evolving mole</dt>
+          </div>
+        </dl>
+      </article>
+
+      <article class="card card-what">
+        <p class="what-copy">
+          Skin cancer is when damaged skin cells grow out of control, usually because of too much UV
+          exposure from the sun.
+        </p>
+        <p class="card-label card-label-muted">What is skin cancer?</p>
+      </article>
+
+      <article class="card card-mutations">
+        <h2 class="mutation-copy" aria-label="BRAF, CDKN2A, NRAS genetic mutations">
+          <span class="mutation-line mutation-line-dark">BRAF</span>
+          <span class="mutation-line mutation-line-gradient">CDKN2A</span>
+          <span class="mutation-line mutation-line-dark">NRAS</span>
+        </h2>
+        <p class="card-label card-label-strong">Genetic Mutations</p>
+      </article>
+
+      <article class="card card-treatment">
+        <h2 class="treatment-copy" aria-label="Radiation Therapy, Immunotherapy, Mohs Surgery, Targeted Therapy, Chemotherapy">
+          <span class="treatment-line treatment-line-muted">Radiation Therapy</span>
+          <span class="treatment-line treatment-line-dark">Immunotherapy</span>
+          <span class="treatment-line treatment-line-hero">Mohs Surgery</span>
+          <span class="treatment-line treatment-line-dark">Targeted Therapy</span>
+          <span class="treatment-line treatment-line-muted">Chemotherapy</span>
+        </h2>
+        <p class="card-label card-label-strong">Treatment</p>
+      </article>
+
+      <article class="card card-diagram">
+        <div class="diagram-surface" aria-hidden="true">
+          <span class="diagram-layer diagram-layer-top"></span>
+          <span class="diagram-layer diagram-layer-mid"></span>
+          <span class="diagram-layer diagram-layer-deep"></span>
+          <span class="diagram-follicle diagram-follicle-a"></span>
+          <span class="diagram-follicle diagram-follicle-b"></span>
+          <span class="diagram-vessel diagram-vessel-a"></span>
+          <span class="diagram-vessel diagram-vessel-b"></span>
+          <span class="diagram-label diagram-label-top">Epidermis</span>
+          <span class="diagram-label diagram-label-mid">Dermis</span>
+          <span class="diagram-label diagram-label-low">Subcutaneous tissue</span>
+        </div>
+      </article>
+
+      <article class="card card-spread">
+        <h2 class="spread-copy" aria-label="Skin, Lymph Nodes, Bloodstream, Organs">
+          <span>Skin</span>
+          <span>Lymph Nodes</span>
+          <span>Bloodstream</span>
+          <span>Organs</span>
+        </h2>
+        <p class="card-label card-label-strong">Spread of Melanoma</p>
+      </article>
+    </main>
+  </body>
+</html>

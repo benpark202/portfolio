@@ -8,6 +8,11 @@ const rootDir = __dirname;
 const workDataPath = path.join(rootDir, "./lib/work.json");
 
 app.use(express.json());
+
+app.get("/projects/melanoma", (_request, response) => {
+  response.sendFile(path.join(rootDir, "projects/melanoma/index.html"));
+});
+
 app.use(express.static(rootDir));
 
 app.get("/api/health", (_request, response) => {

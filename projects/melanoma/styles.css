@@ -1,0 +1,752 @@
+:root {
+  color-scheme: light;
+  --page-bg: #ececec;
+  --card-bg: #ffffff;
+  --text: #111111;
+  --muted: #b0b0b0;
+  --gradient-start: #68d5ed;
+  --gradient-end: #f3791d;
+  --blue-900: #004D80;
+  --blue-700: #4F7EA6;
+  --blue-500: #7B9FBE;
+  --blue-300: #D1D9EB;
+  --radius: 1.2rem;
+  --pad: clamp(0.75rem, 1vw, 1.15rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top center, rgba(255, 255, 255, 0.9), transparent 34%),
+    linear-gradient(180deg, #efefef 0%, #e8e8e8 100%);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding: var(--pad);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.board {
+  width: min(calc(100vw - (var(--pad) * 2)), calc((100svh - (var(--pad) * 2)) * 1.7777778));
+  height: min(calc(100svh - (var(--pad) * 2)), calc((100vw - (var(--pad) * 2)) * 0.5625));
+  display: grid;
+  grid-template-columns: 1.08fr 0.9fr 1.22fr 0.92fr 1.06fr;
+  grid-template-rows: 0.96fr 0.96fr 0.94fr 1.08fr 1.08fr;
+  grid-template-areas:
+    "variants survival sky hereditary mitigation"
+    "variants risk sky hereditary mitigation"
+    "variants mole hero abcde mitigation"
+    "what mutations treatment abcde spread"
+    "what mutations treatment diagram spread";
+  gap: clamp(0.45rem, 0.72vw, 0.8rem);
+}
+
+.board,
+.board * {
+  font-weight: 600;
+}
+
+.card {
+  --card-enter-x: 0px;
+  --card-enter-y: 0px;
+  --card-enter-scale: 1;
+  --card-enter-delay: 240ms;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  box-shadow: none;
+  padding: clamp(1rem, 1.2vw, 1.55rem);
+  container-type: inline-size;
+  opacity: 0;
+  filter: blur(8px);
+  transform: translate3d(var(--card-enter-x), var(--card-enter-y), 0)
+    scale(var(--card-enter-scale));
+  transition:
+    opacity 620ms ease,
+    filter 620ms ease,
+    transform 820ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.board.is-open .card {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+  transition-delay: var(--card-enter-delay);
+}
+
+.card-variants {
+  --card-enter-x: -28px;
+  --card-enter-y: -28px;
+  --card-enter-delay: 205ms;
+}
+
+.card-survival {
+  --card-enter-y: -28px;
+  --card-enter-delay: 230ms;
+}
+
+.card-sky {
+  --card-enter-y: -28px;
+  --card-enter-delay: 230ms;
+}
+
+.card-hereditary {
+  --card-enter-y: -28px;
+  --card-enter-delay: 300ms;
+}
+
+.card-mitigation {
+  --card-enter-x: 28px;
+  --card-enter-delay: 340ms;
+}
+
+.card-risk {
+  --card-enter-x: -28px;
+  --card-enter-delay: 248ms;
+}
+
+.card-mole {
+  --card-enter-x: -28px;
+  --card-enter-delay: 340ms;
+}
+
+.card-hero {
+  --card-enter-scale: 1.28;
+  --card-enter-delay: 72ms;
+}
+
+.card-abcde {
+  --card-enter-x: 28px;
+  --card-enter-delay: 340ms;
+}
+
+.card-what {
+  --card-enter-y: 28px;
+  --card-enter-delay: 420ms;
+}
+
+.card-mutations {
+  --card-enter-y: 28px;
+  --card-enter-delay: 420ms;
+}
+
+.card-treatment {
+  --card-enter-y: 28px;
+  --card-enter-delay: 460ms;
+}
+
+.card-diagram {
+  --card-enter-y: 28px;
+  --card-enter-delay: 460ms;
+}
+
+.card-spread {
+  --card-enter-y: 28px;
+  --card-enter-delay: 460ms;
+}
+
+.card-label {
+  margin: 0;
+  font-size: clamp(0.95rem, 9cqw, 1.05rem);
+}
+
+.card-label-strong {
+  font-weight: 600;
+}
+
+.card-label-muted {
+  color: var(--muted);
+  font-size: clamp(0.95rem, 8cqw, 1rem);
+}
+
+.tone-dark {
+  color: var(--blue-900);
+}
+
+.tone-mid {
+  color: var(--blue-500);
+}
+
+.tone-soft {
+  color: rgba(17, 17, 17, 0.28);
+}
+
+.tone-strike {
+  color: var(--blue-500);
+  text-decoration-line: line-through;
+  text-decoration-color: var(--blue-900);
+  text-decoration-thickness: 0.11em;
+}
+
+.variants-list span,
+.percent-copy,
+.stack-list span,
+.abcde-list dt,
+.spread-copy span {
+  background-image: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.variants-list,
+.mutation-copy,
+.treatment-copy,
+.stack-list,
+.spread-copy {
+  margin: 0;
+}
+
+.card-variants {
+  grid-area: variants;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.variants-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  gap: 0.55em;
+  font-size: clamp(0.95rem, 9.6cqw, 2.75rem);
+  line-height: 1.08;
+}
+
+.variants-list span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.2em 0.7em;
+  border-radius: 999px;
+  background: #ffbc61;
+  background-image: none;
+  color: #ffffff;
+  text-align: center;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.variants-list span:nth-child(2),
+.variants-list span:nth-child(3),
+.variants-list span:nth-child(5) {
+  align-self: flex-end;
+}
+
+.variants-list span:nth-child(4) {
+  max-width: 8ch;
+}
+
+.card-survival,
+.card-hereditary,
+.card-risk {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.7rem;
+  text-align: center;
+}
+
+.card-survival {
+  grid-area: survival;
+}
+
+.card-hereditary {
+  grid-area: hereditary;
+}
+
+.percent-copy {
+  margin: 0;
+  font-size: clamp(2.5rem, 17cqw, 4.7rem);
+  line-height: 0.92;
+}
+
+.card-sky {
+  grid-area: sky;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: clamp(1.1rem, 1.4vw, 1.8rem);
+}
+
+.card-sky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(34, 68, 145, 0.16) 0%, rgba(19, 48, 111, 0.2) 100%);
+  pointer-events: none;
+}
+
+.card-sky::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 34%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(207, 223, 247, 0.38) 100%);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.sky-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sky-copy {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.15rem, 9cqw, 2.25rem);
+  line-height: 1.12;
+  color: #fdfdfd;
+}
+
+.card-mitigation {
+  grid-area: mitigation;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-variants .card-label,
+.card-mitigation .card-label {
+  width: 100%;
+  text-align: center;
+}
+
+.stack-list {
+  display: grid;
+  flex: 1;
+  gap: 0.1em;
+  align-content: center;
+  font-size: clamp(1.3rem, 18cqw, 3.8rem);
+  line-height: 0.98;
+}
+
+.card-risk {
+  grid-area: risk;
+}
+
+.risk-orb {
+  width: min(64%, 8rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 28% 28%, rgba(255, 214, 173, 0.9), transparent 28%),
+    linear-gradient(180deg, #eb6e1a 0%, #ef944f 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.45),
+    0 0 0 2px rgba(255, 239, 228, 0.6);
+}
+
+.card-mole {
+  grid-area: mole;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card-mole::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.14) 100%);
+  pointer-events: none;
+}
+
+.mole-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-heading {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(1rem, 10cqw, 1.55rem);
+}
+
+.card-hero {
+  grid-area: hero;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(53, 49, 137, 0.08), rgba(255, 255, 255, 0.04));
+  pointer-events: none;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  width: 100%;
+  font-size: clamp(1.8rem, 17cqw, 4.7rem);
+  color: white;
+  opacity: 0.8;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.92);
+}
+
+.card-abcde {
+  grid-area: abcde;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111111;
+}
+
+.abcde-list {
+  display: grid;
+  gap: 0.72em;
+  margin: 0;
+  width: 100%;
+}
+
+.abcde-list div {
+  display: flex;
+  justify-content: center;
+  gap: 0.12em;
+  align-items: baseline;
+}
+
+.abcde-list dt,
+.abcde-list dd {
+  margin: 0;
+}
+
+.abcde-list dt {
+  background-image: none;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.abcde-list dd {
+  color: #ffffff;
+  text-align: center;
+}
+
+.abcde-list dt,
+.abcde-list dd {
+  font-size: clamp(1.2rem, 15cqw, 2.35rem);
+}
+
+.abcde-list dd {
+  font-size: clamp(1rem, 9cqw, 1.6rem);
+}
+
+.card-what {
+  grid-area: what;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.what-copy {
+  display: grid;
+  align-content: center;
+  flex: 1;
+  margin: 0;
+  max-width: 17ch;
+  font-size: clamp(1rem, 10cqw, 2rem);
+  line-height: 1.25;
+}
+
+.card-mutations {
+  grid-area: mutations;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.mutation-copy {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.2em;
+  width: 100%;
+  flex: 1;
+  font-size: clamp(1.7rem, 20.5cqw, 4.95rem);
+  line-height: 0.96;
+}
+
+.mutation-line {
+  letter-spacing: -0.075em;
+}
+
+.mutation-line-dark {
+  color: #111111;
+}
+
+.mutation-line-gradient {
+  background-image: none;
+  color: #111111;
+  -webkit-text-fill-color: #111111;
+}
+
+.card-treatment {
+  grid-area: treatment;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.treatment-copy {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.18em;
+  height: 100%;
+  width: 100%;
+  line-height: 0.98;
+}
+
+.treatment-line {
+  letter-spacing: -0.065em;
+}
+
+.treatment-line-muted {
+  color: rgba(17, 17, 17, 0.32);
+}
+
+.treatment-line-dark {
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.treatment-line-hero {
+  background-image: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.treatment-copy span:nth-child(1) {
+  font-size: clamp(0.88rem, 7cqw, 1.3rem);
+}
+
+.treatment-copy span:nth-child(2) {
+  font-size: clamp(1.2rem, 9.5cqw, 1.9rem);
+}
+
+.treatment-copy span:nth-child(3) {
+  font-size: clamp(1.9rem, 14cqw, 3.35rem);
+  line-height: 0.94;
+}
+
+.treatment-copy span:nth-child(4) {
+  font-size: clamp(1.2rem, 9.5cqw, 1.9rem);
+}
+
+.treatment-copy span:nth-child(5) {
+  font-size: clamp(0.88rem, 7cqw, 1.3rem);
+}
+
+.card-diagram {
+  grid-area: diagram;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.6rem, 0.8vw, 0.9rem);
+}
+
+.diagram-surface {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--radius) - 0.55rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.25)),
+    linear-gradient(135deg, #fbf5f0 0%, #efe2db 42%, #fbf9f7 100%);
+  overflow: hidden;
+}
+
+.diagram-layer {
+  position: absolute;
+  left: 4%;
+  right: 24%;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.diagram-layer-top {
+  top: 8%;
+  height: 18%;
+  background: linear-gradient(180deg, #edd7ce, #dcb4a0);
+  clip-path: polygon(0 0, 100% 0, 96% 80%, 84% 100%, 56% 76%, 34% 100%, 0 68%);
+}
+
+.diagram-layer-mid {
+  top: 20%;
+  height: 32%;
+  background:
+    linear-gradient(180deg, #f1d6d0, #e6b9b2),
+    repeating-linear-gradient(
+      90deg,
+      rgba(197, 110, 123, 0.24) 0 10px,
+      rgba(255, 255, 255, 0.05) 10px 22px
+    );
+}
+
+.diagram-layer-deep {
+  top: 48%;
+  height: 38%;
+  background:
+    radial-gradient(circle at 24% 30%, rgba(118, 179, 236, 0.85) 0 6%, transparent 8%),
+    radial-gradient(circle at 44% 60%, rgba(243, 111, 100, 0.85) 0 5%, transparent 8%),
+    linear-gradient(180deg, #f8ece7, #ead9ce);
+}
+
+.diagram-follicle,
+.diagram-vessel {
+  position: absolute;
+  border-radius: 999px;
+}
+
+.diagram-follicle {
+  width: 0.55rem;
+  height: 3.6rem;
+  background: linear-gradient(180deg, #8e6a56, #d8baa9);
+  top: 4%;
+  transform: rotate(17deg);
+}
+
+.diagram-follicle-a {
+  left: 40%;
+}
+
+.diagram-follicle-b {
+  left: 58%;
+}
+
+.diagram-vessel {
+  height: 0.18rem;
+  background: linear-gradient(90deg, #c95062, #6289d8);
+  opacity: 0.9;
+}
+
+.diagram-vessel-a {
+  left: 18%;
+  right: 16%;
+  bottom: 16%;
+  transform: rotate(-22deg);
+}
+
+.diagram-vessel-b {
+  left: 10%;
+  right: 28%;
+  bottom: 26%;
+  transform: rotate(18deg);
+}
+
+.diagram-label {
+  position: absolute;
+  right: 4%;
+  font-size: clamp(0.42rem, 4.5cqw, 0.8rem);
+  color: rgba(17, 17, 17, 0.58);
+}
+
+.diagram-label-top {
+  top: 12%;
+}
+
+.diagram-label-mid {
+  top: 34%;
+}
+
+.diagram-label-low {
+  bottom: 16%;
+}
+
+.card-spread {
+  grid-area: spread;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.spread-copy {
+  display: grid;
+  flex: 1;
+  gap: 0.14em;
+  width: 100%;
+  place-content: center;
+  font-size: clamp(1.3rem, 16cqw, 3.9rem);
+  line-height: 0.96;
+}
+
+.spread-copy span {
+  background-image: none;
+  color: #111111;
+  -webkit-text-fill-color: #111111;
+}
+
+@media (max-aspect-ratio: 1.15 / 1) {
+  .board {
+    width: min(calc(100vw - (var(--pad) * 2)), calc((100svh - (var(--pad) * 2)) * 1.24));
+    height: min(calc(100svh - (var(--pad) * 2)), calc((100vw - (var(--pad) * 2)) * 0.81));
+  }
+
+  .card {
+    padding: clamp(0.75rem, 1vw, 1.05rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}
