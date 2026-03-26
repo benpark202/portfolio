@@ -6,6 +6,7 @@
   const mitigationImage = document.getElementById("mitigation-image");
   const mitigationTitle = document.getElementById("mitigation-title");
   const riskSlider = document.querySelector(".risk-slider");
+  const abcdeCard = document.querySelector(".card-abcde");
   const abcdeLetter = document.getElementById("abcde-letter");
   const abcdeMeaning = document.getElementById("abcde-meaning");
   const abcdeDescription = document.getElementById("abcde-description");
@@ -233,12 +234,28 @@
 
   if (abcdeItems.length > 1) {
     let activeAbcdeIndex = 0;
+    let abcdeAutoRotateEnabled = true;
 
     const advanceAbcdeRotation = () => {
+      if (!abcdeAutoRotateEnabled) return;
       activeAbcdeIndex = (activeAbcdeIndex + 1) % abcdeItems.length;
       syncAbcdeRotation(activeAbcdeIndex);
       window.setTimeout(advanceAbcdeRotation, abcdeStepDelayMs);
     };
+
+    abcdeCard?.addEventListener("click", () => {
+      abcdeAutoRotateEnabled = false;
+      activeAbcdeIndex = (activeAbcdeIndex + 1) % abcdeItems.length;
+      syncAbcdeRotation(activeAbcdeIndex);
+    });
+
+    abcdeCard?.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      abcdeAutoRotateEnabled = false;
+      activeAbcdeIndex = (activeAbcdeIndex + 1) % abcdeItems.length;
+      syncAbcdeRotation(activeAbcdeIndex);
+    });
 
     window.setTimeout(advanceAbcdeRotation, abcdeStepDelayMs);
   }

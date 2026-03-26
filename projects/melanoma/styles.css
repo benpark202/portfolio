@@ -492,7 +492,7 @@ body {
 
 .hereditary-panel-title {
   width: 100%;
-  font-size: clamp(0.84rem, 5.2cqw, 1rem);
+  font-size: clamp(1.08rem, 6.6cqw, 1.38rem);
   line-height: 1.06;
   color: #1f2324;
   text-align: center;
@@ -511,8 +511,9 @@ body {
 }
 
 .hereditary-panel-copy .panel-emphasis {
-  color: #fb7414;
-  -webkit-text-fill-color: #fb7414;
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+  font-weight: inherit;
   white-space: nowrap;
 }
 
@@ -532,7 +533,27 @@ body {
 
 .card-survival .risk-slider {
   width: 100%;
-  gap: clamp(0.38rem, 0.9cqh, 0.68rem);
+  grid-template-columns: auto 1fr auto;
+  column-gap: clamp(0.55rem, 1.8cqw, 1rem);
+  row-gap: 0;
+  align-items: center;
+}
+
+.card-survival .risk-slider-copy {
+  display: none;
+}
+
+.card-survival .risk-slider-scale {
+  display: contents;
+}
+
+.card-survival .risk-slider-scale span:first-child {
+  grid-column: 1;
+}
+
+.card-survival .risk-slider-scale span:last-child {
+  grid-column: 3;
+  justify-self: end;
 }
 
 .risk-slider-copy,
@@ -555,7 +576,9 @@ body {
 }
 
 .risk-slider-track {
+  grid-column: 2;
   position: relative;
+  width: 100%;
   height: clamp(0.44rem, 2.9cqw, 0.62rem);
   border-radius: 999px;
 }
@@ -623,7 +646,7 @@ body {
   position: relative;
   z-index: 1;
   margin: 0;
-  font-size: clamp(1rem, 10cqw, 1.55rem);
+  font-size: clamp(1.18rem, 11.8cqw, 1.9rem);
 }
 
 .card-hero {
@@ -668,6 +691,9 @@ body {
   align-items: stretch;
   justify-content: center;
   background: var(--card-bg);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .abcde-viewer {
@@ -770,8 +796,8 @@ body {
   flex: 1;
   margin: 0;
   width: 100%;
-  max-width: 27ch;
-  font-size: clamp(1rem, 5.1cqw, 1.72rem);
+  max-width: none;
+  font-size: clamp(0.8rem, 3.6cqw, 1.24rem);
   line-height: 1.22;
   color: #fdfdfd;
 }
