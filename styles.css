@@ -1473,6 +1473,7 @@ body.is-project-modal-open {
 .project-modal-button {
   --modal-button-color: rgba(30, 38, 41, 0.42);
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   font-family: "Google Sans", sans-serif;
@@ -1483,10 +1484,13 @@ body.is-project-modal-open {
   width: clamp(4.9rem, 6.8vw, 5.6rem);
   height: clamp(4.9rem, 6.8vw, 5.6rem);
   padding: 0;
+  padding-left: 0;
   border-radius: 50%;
   border: 2px solid var(--modal-button-color);
   background: transparent;
   color: var(--modal-button-color);
+  transform-origin: center;
+  will-change: transform;
   transition:
     color 180ms ease,
     border-color 180ms ease,
@@ -1506,7 +1510,8 @@ body.is-project-modal-open {
   border-color: var(--accent-green);
   color: var(--accent-green);
   background: transparent;
-  transform: translateY(-1px);
+  padding-left: 0;
+  transform: scale(1.04);
 }
 
 .project-modal-button.is-arrow-only,

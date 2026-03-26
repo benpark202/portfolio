@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Melanoma Bento</title>
+    <title>Melanoma</title>
     <meta
       name="description"
       content="Single-screen melanoma overview displayed as a fixed bento dashboard."
@@ -14,53 +14,135 @@
   <body>
     <main class="board" aria-label="Single-screen melanoma information bento layout">
       <article class="card card-variants">
-        <p class="variants-list" aria-label="Common skin cancer variants">
-          <span class="tone-dark">Cutaneous T-Cell Lymphoma</span>
-          <span class="tone-mid">Squamous Cell</span>
-          <span class="tone-mid">Basal Cell Carcinoma</span>
-          <span class="tone-mid">Kaposi Sarcoma</span>
-          <span class="tone-dark">Melanoma</span>
-        </p>
-        <p class="card-label card-label-strong">Common Variants</p>
+        <div
+          class="variants-list"
+          aria-label="Genetic factors linked to melanoma including inherited DNA variants, MC1R risk, CDKN2A family history, DNA repair failure, MAPK activation, and mutation-driven tumor growth"
+        >
+          <div class="variants-row" aria-hidden="true">
+            <div class="variants-track">
+              <span class="variant-pill">Inherited DNA Variants</span>
+              <span class="variant-pill">MC1R Raises Risk</span>
+              <span class="variant-pill">CDKN2A Family Trait</span>
+            </div>
+            <div class="variants-track" aria-hidden="true">
+              <span class="variant-pill">Inherited DNA Variants</span>
+              <span class="variant-pill">MC1R Raises Risk</span>
+              <span class="variant-pill">CDKN2A Family Trait</span>
+            </div>
+          </div>
+          <div class="variants-row variants-row-reverse" aria-hidden="true">
+            <div class="variants-track">
+              <span class="variant-pill">DNA Repair Breaks Down</span>
+              <span class="variant-pill">MAPK Pathway Activated</span>
+              <span class="variant-pill">Tumor Suppressors Lost</span>
+            </div>
+            <div class="variants-track" aria-hidden="true">
+              <span class="variant-pill">DNA Repair Breaks Down</span>
+              <span class="variant-pill">MAPK Pathway Activated</span>
+              <span class="variant-pill">Tumor Suppressors Lost</span>
+            </div>
+          </div>
+          <div class="variants-row" aria-hidden="true">
+            <div class="variants-track">
+              <span class="variant-pill">Pigment-Cell Genes Shift</span>
+              <span class="variant-pill">Cell-Cycle Control Fails</span>
+              <span class="variant-pill">Mutations Build Over Time</span>
+            </div>
+            <div class="variants-track" aria-hidden="true">
+              <span class="variant-pill">Pigment-Cell Genes Shift</span>
+              <span class="variant-pill">Cell-Cycle Control Fails</span>
+              <span class="variant-pill">Mutations Build Over Time</span>
+            </div>
+          </div>
+          <div class="variants-row variants-row-reverse" aria-hidden="true">
+            <div class="variants-track">
+              <span class="variant-pill">UV Triggers DNA Errors</span>
+              <span class="variant-pill">Growth Signals Switch On</span>
+              <span class="variant-pill">Familial Susceptibility</span>
+            </div>
+            <div class="variants-track" aria-hidden="true">
+              <span class="variant-pill">UV Triggers DNA Errors</span>
+              <span class="variant-pill">Growth Signals Switch On</span>
+              <span class="variant-pill">Familial Susceptibility</span>
+            </div>
+          </div>
+          <div class="variants-row" aria-hidden="true">
+            <div class="variants-track">
+              <span class="variant-pill">Mutation-Driven Growth</span>
+              <span class="variant-pill">Genes Shape Risk</span>
+              <span class="variant-pill">Inherited + Acquired</span>
+            </div>
+            <div class="variants-track" aria-hidden="true">
+              <span class="variant-pill">Mutation-Driven Growth</span>
+              <span class="variant-pill">Genes Shape Risk</span>
+              <span class="variant-pill">Inherited + Acquired</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-label card-label-strong">Genetic Basis</p>
       </article>
 
       <article class="card card-survival">
-        <p class="percent-copy"><span>99</span>%</p>
-        <p class="card-label">Survival Rate</p>
+        <div class="risk-slider" aria-hidden="true">
+          <div class="risk-slider-copy">
+          </div>
+          <div class="risk-slider-track">
+            <span class="risk-slider-fill"></span>
+            <span class="risk-slider-remaining"></span>
+            <span class="risk-slider-knob"></span>
+          </div>
+          <div class="risk-slider-scale">
+            <span>Low</span>
+            <span>High</span>
+          </div>
+        </div>
+        <p class="card-label risk-slider-note">Higher risk for those w/ MC1R</p>
       </article>
 
-      <article class="card card-sky">
+      <article class="card card-sky" aria-hidden="true">
         <img
-          class="sky-image"
-          src="/assets/cancer-project/sky.jpg"
+          class="diagram-image"
+          src="/assets/cancer-project/skinDiagram.png"
           alt=""
           aria-hidden="true"
         />
-        <p class="sky-copy">
-          Caused by DNA damage
-          <br />
-          due to UV
-        </p>
       </article>
 
-      <article class="card card-hereditary">
-        <div class="risk-orb" aria-hidden="true"></div>
-        <p class="card-label card-label-strong">MC1R Genetic Risk</p>
+      <article
+        class="card card-hereditary"
+        data-mitigation-card
+        role="button"
+        tabindex="0"
+        aria-label="View the next mitigation"
+      >
+        <div class="mitigation-viewer mitigation-viewer-inline" aria-live="polite">
+          <p id="mitigation-title" class="mitigation-title mitigation-title-inline"></p>
+          <div class="mitigation-media mitigation-media-inline">
+            <img
+              id="mitigation-image"
+              class="mitigation-image mitigation-image-inline"
+              src=""
+              alt=""
+              decoding="async"
+            />
+          </div>
+        </div>
       </article>
 
       <article class="card card-mitigation">
-        <h2 class="stack-list" aria-label="SPF 30 plus, Monthly Checkups, Avoid Tanning, Sunglasses">
-          <span class="tone-dark">SPF 30+</span>
-          <span class="tone-mid">Monthly Checkups</span>
-          <span class="tone-strike">Tanning</span>
-          <span class="tone-mid">Sunglasses</span>
-        </h2>
-        <p class="card-label">Mitigations &amp; Protection</p>
-      </article>
-
-      <article class="card card-risk">
-        <p class="percent-copy"><span>5-10</span>%</p>
-        <p class="card-label">Hereditary Cases</p>
+        <div class="hereditary-panel">
+          <p class="hereditary-panel-copy">
+            Melanoma can grow downward from the epidermis into deeper skin layers, then spread
+            through the <span class="panel-emphasis">lymphatic channels</span> and
+            <span class="panel-emphasis">bloodstream</span>, then into
+            <span class="panel-emphasis">lymph nodes</span> and distant organs.
+            Warning signs include an enlarging or changing mole, irregular borders, uneven color,
+            bleeding, itching, or pain.
+          </p>
+          <p class="card-label card-label-strong hereditary-panel-title">
+            Spread and Symptoms
+          </p>
+        </div>
       </article>
 
       <article class="card card-mole">
@@ -70,7 +152,7 @@
           alt=""
           aria-hidden="true"
         />
-        <h2 class="image-heading">Mole Indicators</h2>
+        <h2 class="image-heading">Large, Dark Moles</h2>
       </article>
 
       <article class="card card-hero">
@@ -80,55 +162,47 @@
           alt=""
           aria-hidden="true"
         />
-        <h1 class="hero-copy">Skin Cancer</h1>
+        <h1 class="hero-copy">Melanoma</h1>
       </article>
 
       <article class="card card-abcde">
-        <dl class="abcde-list">
-          <div>
-            <dt>Asymmetry</dt>
+        <div class="abcde-viewer" aria-live="polite">
+          <div class="abcde-stack">
+            <p id="abcde-letter" class="abcde-letter">A</p>
+            <div class="abcde-copy">
+              <p id="abcde-meaning" class="card-label card-label-strong abcde-meaning">Asymmetry</p>
+              <p id="abcde-description" class="abcde-description">
+                One half of the mole does not match the other.
+              </p>
+            </div>
           </div>
-          <div>
-            <dt>Border irregular</dt>
-          </div>
-          <div>
-            <dt>Color variation</dt>
-          </div>
-          <div>
-            <dt>Diameter &gt; 6m</dt>
-          </div>
-          <div>
-            <dt>Evolving mole</dt>
-          </div>
-        </dl>
+        </div>
       </article>
 
       <article class="card card-what">
+        <img
+          class="sky-image"
+          src="/assets/cancer-project/sky.jpg"
+          alt=""
+          aria-hidden="true"
+        />
         <p class="what-copy">
-          Skin cancer is when damaged skin cells grow out of control, usually because of too much UV
-          exposure from the sun.
+          Melanoma is a variant of skin cancer that begins in melanocytes, the cells that produce
+          pigment. It often develops after too much ultraviolet (UV) exposure and is important to
+          detect early because it can grow and spread more quickly than many other skin cancers.
         </p>
-        <p class="card-label card-label-muted">What is skin cancer?</p>
-      </article>
-
-      <article class="card card-mutations">
-        <h2 class="mutation-copy" aria-label="BRAF, CDKN2A, NRAS genetic mutations">
-          <span class="mutation-line mutation-line-dark">BRAF</span>
-          <span class="mutation-line mutation-line-gradient">CDKN2A</span>
-          <span class="mutation-line mutation-line-dark">NRAS</span>
-        </h2>
-        <p class="card-label card-label-strong">Genetic Mutations</p>
+        <p class="card-label card-label-strong what-label">Overview</p>
       </article>
 
       <article class="card card-treatment">
         <h2 class="treatment-copy" aria-label="Radiation Therapy, Immunotherapy, Mohs Surgery, Targeted Therapy, Chemotherapy">
-          <span class="treatment-line treatment-line-muted">Radiation Therapy</span>
-          <span class="treatment-line treatment-line-dark">Immunotherapy</span>
-          <span class="treatment-line treatment-line-hero">Mohs Surgery</span>
-          <span class="treatment-line treatment-line-dark">Targeted Therapy</span>
-          <span class="treatment-line treatment-line-muted">Chemotherapy</span>
+          <span class="treatment-line">Radiation Therapy</span>
+          <span class="treatment-line">Immunotherapy</span>
+          <span class="treatment-line">Mohs Surgery</span>
+          <span class="treatment-line">Targeted Therapy</span>
+          <span class="treatment-line">Chemotherapy</span>
         </h2>
-        <p class="card-label card-label-strong">Treatment</p>
+        <p class="card-label card-label-strong">Treatments</p>
       </article>
 
       <article class="card card-diagram">
@@ -147,13 +221,31 @@
       </article>
 
       <article class="card card-spread">
-        <h2 class="spread-copy" aria-label="Skin, Lymph Nodes, Bloodstream, Organs">
-          <span>Skin</span>
-          <span>Lymph Nodes</span>
-          <span>Bloodstream</span>
-          <span>Organs</span>
-        </h2>
-        <p class="card-label card-label-strong">Spread of Melanoma</p>
+        <div class="citations-copy" aria-label="Scientific citations">
+          <p class="citation-item">
+            National Cancer Institute. (n.d.). <span>Melanoma of the skin-Cancer stat facts.</span>
+            U.S. Department of Health and Human Services.
+            https://seer.cancer.gov/statfacts/html/melan.html
+          </p>
+          <p class="citation-item">
+            National Institutes of Health. (n.d.). <span>New genetic regions linked to risk for
+            melanoma.</span> https://www.nih.gov/news-events/nih-research-matters/new-genetic-regions-linked-risk-melanoma
+          </p>
+          <p class="citation-item">
+            The Skin Cancer Foundation. (n.d.). <span>Melanoma.</span>
+            https://www.skincancer.org/skin-cancer-information/melanoma/
+          </p>
+          <p class="citation-item">
+            American Cancer Society. (n.d.). <span>Key statistics for melanoma skin cancer.</span>
+            https://www.cancer.org/cancer/types/melanoma-skin-cancer/about/key-statistics.html
+          </p>
+          <p class="citation-item">
+            National Center for Biotechnology Information. (n.d.). <span>History of melanoma.</span>
+            In <span>Melanoma (NCBI Bookshelf).</span> National Library of Medicine.
+            https://www.ncbi.nlm.nih.gov/books/NBK13962/
+          </p>
+        </div>
+        <p class="card-label card-label-strong">References</p>
       </article>
     </main>
   </body>
