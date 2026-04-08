@@ -1,11 +1,14 @@
 {
   "projects": [
     {
-      "name": "melanoma poster",
+      "name": "melanoma",
       "year": 2026,
       "link": "/projects/melanoma",
       "screenshot": "assets/project-thumbnails/skin-cancer-poster.png",
-      "description": "An informative poster for my Advanced Placement Biology class that provides an overview of different varients of skin cancer, their symptoms, risk factors, statistics, and prevention tips."
+      "description": "An informative poster for my Advanced Placement Biology class that provides an overview of different varients of skin cancer, their symptoms, risk factors, statistics, and prevention tips.",
+      "buttons": [
+        { "label": "github", "link": "https://github.com/benpark202/melanoma" }
+      ]
     },
     {
       "name": "matchai",
@@ -25,7 +28,7 @@
       "screenshot": "assets/project-thumbnails/pask-thumbnail.png",
       "description": "Pask was my submission for the 2025 WWDC Student Swift Challenge, which aimed to teach the fundamentals of online security in an fun and engaging way. Inspired off of Duolingo's gamified design, users were challenged to secure a vault by completing quests. Users redeem “key fragments” by completing security questions and gaining knowledge. ",
       "buttons": [
-        { "label": "github", "link": "#" }
+        { "label": "github", "link": "https://github.com/benpark202/pask" }
       ]
     }
   ] 
