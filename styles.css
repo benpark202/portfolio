@@ -3,7 +3,7 @@
   --bg-color: #e8e6dc;
   --text-color: #1e2629;
   --accent-green: #74a12e;
-  --name-gradient: linear-gradient(120deg, #ff8147, #47e0ff);
+  --name-gradient: linear-gradient(108deg, rgb(8, 148, 255), rgb(201, 89, 221) 34%, rgb(255, 46, 84) 68%, rgb(255, 144, 4));
   --font-family-base: "Google Sans", "Segoe UI", sans-serif;
   --headline-size: 80px;
   --selection-bg: linear-gradient(
@@ -81,8 +81,9 @@ body.is-resume-open .custom-cursor.is-visible {
     opacity:.7
 }
 
-body.cursor-enabled, body.cursor-enabled a, body.cursor-enabled button {
-    cursor:none
+body.cursor-enabled,
+body.cursor-enabled * {
+    cursor:none !important
 }
 
 ::selection {
@@ -111,13 +112,15 @@ body.cursor-enabled, body.cursor-enabled a, body.cursor-enabled button {
 
 .selection-pill {
     position: fixed;
-    background: var(--selection-bg);
-    border-radius:.42em
+    background: rgba(71, 224, 255, .14);
+    border-radius: .22em;
+    box-shadow: 0 0 0 1px rgba(255, 129, 71, .08) inset;
+    opacity: .9
 }
 
 .highlight, mark {
-    background: var(--highlight-bg);
-    border-radius: .36em;
+    background: rgba(71, 224, 255, .16);
+    border-radius: .22em;
     padding: .02em .22em;
     box-decoration-break: clone;
     -webkit-box-decoration-break:clone
@@ -147,12 +150,14 @@ main {
     height: 24px;
     color: var(--text-color);
     background: 0 0;
-    border-radius: 0;
+    border-radius: 999px;
+    --cursor-zoom-scale: 1;
+    --cursor-state-scale: 1;
     pointer-events: none;
     opacity: 0;
     z-index: 9999;
-    transform-origin: 7px 5px;
-    transform: translate(-7px, -5px) scale(1);
+    transform-origin: center;
+    transform: translate(-50%, -50%) scale(calc(var(--cursor-zoom-scale) * var(--cursor-state-scale)));
     transition: opacity 140ms, transform .2s;
     will-change:transform, opacity, color
 }
@@ -161,7 +166,8 @@ main {
     display: block;
     width: 100%;
     height: 100%;
-    fill:currentColor
+    background: currentColor;
+    border-radius: 999px
 }
 
 .custom-cursor.is-visible {
@@ -169,15 +175,15 @@ main {
 }
 
 .custom-cursor.is-link-hover {
-    transform:translate(-7px, -5px) scale(2)
+    --cursor-state-scale: 2
 }
 
 .custom-cursor.is-pressed {
-    transform:translate(-7px, -5px) scale(1.85)
+    --cursor-state-scale: 1.85
 }
 
 .custom-cursor.is-link-hover.is-pressed {
-    transform:translate(-7px, -5px) scale(2.05)
+    --cursor-state-scale: 2.05
 }
 
 .theme-transition-circle {
@@ -270,12 +276,14 @@ main {
 .resume-screen-inner {
     height: 100%;
     min-height: 100svh;
-    padding:var(--resume-block-pad) var(--resume-inline-pad)
+    padding:var(--resume-block-pad) var(--resume-inline-pad);
+    overflow-y:auto;
+    overscroll-behavior: contain
 }
 
 .resume-bento {
     width: 100%;
-    height: calc(100svh -(var(--resume-block-pad) * 2));
+    height: min(calc(100svh -(var(--resume-block-pad) * 2)), 68svh);
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     grid-template-rows: repeat(8, minmax(0, 1fr));
@@ -1704,6 +1712,12 @@ a[data-work-link] {
     transition-delay:0s, var(--work-link-enter-delay), var(--work-link-enter-delay), var(--work-link-enter-delay), 0s
 }
 
+a[data-work-link].is-melanoma,
+.project-modal-title-display.is-melanoma,
+.project-modal-title-run.is-melanoma {
+    font-family: "Google Sans", var(--font-family-base)
+}
+
 a[data-secondary-link].is-faded-out, a[data-work-link].is-faded-out {
     opacity: 0 !important;
     filter: blur(8px) !important;
@@ -1788,7 +1802,26 @@ a[data-work-link] .link-extension {
     place-items: center;
     cursor: pointer;
     padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
     transition:background-color 260ms, border-color 260ms, box-shadow 260ms, transform .2s, color 260ms, opacity 220ms
+}
+
+.theme-toggle *,
+.theme-toggle::before,
+.theme-toggle::after {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+.theme-toggle::selection,
+.theme-toggle *::selection,
+.theme-toggle::-moz-selection,
+.theme-toggle *::-moz-selection {
+    background: transparent;
+    color: inherit
 }
 
 .theme-toggle:focus-visible, .theme-toggle:hover {

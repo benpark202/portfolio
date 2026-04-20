@@ -13,6 +13,10 @@ app.get("/projects/melanoma", (_request, response) => {
   response.sendFile(path.join(rootDir, "projects/melanoma/index.html"));
 });
 
+app.get("/projects/hangman", (_request, response) => {
+  response.sendFile(path.join(rootDir, "projects/hangman/index.html"));
+});
+
 app.use(express.static(rootDir));
 
 app.get("/api/health", (_request, response) => {

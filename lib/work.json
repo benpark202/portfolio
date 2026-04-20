@@ -11,6 +11,16 @@
       ]
     },
     {
+      "name": "hangman",
+      "year": 2026,
+      "link": "/projects/hangman",
+      "screenshot": "assets/project-thumbnails/hangman.svg",
+      "description": "A polished word-guessing game with keyboard controls, hint support, and a responsive TypeScript-driven interface.",
+      "buttons": [
+        { "label": "play", "link": "/projects/hangman" }
+      ]
+    },
+    {
       "name": "matchai",
       "year": 2026,
       "screenshot": "assets/project-thumbnails/matchai-thumbnail.png",

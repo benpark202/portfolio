@@ -4,8 +4,9 @@
   "private": true,
   "description": "Portfolio site build tooling",
   "scripts": {
+    "build:hangman": "node scripts/build-hangman.js",
     "build:dist": "rm -rf dist && mkdir -p dist && cp -R index.html styles.css assets lib projects dist && [ ! -e forms ] || cp -R forms dist",
-    "build": "npm run build:dist",
+    "build": "npm run build:hangman && npm run build:dist",
     "start": "npm run build && node server.js",
     "dev:server": "nodemon server.js",
     "dev": "npm run dev:server"
