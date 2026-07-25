@@ -3,9 +3,9 @@
   --bg-color: #e8e6dc;
   --text-color: #1e2629;
   --accent-green: #74a12e;
-  --name-gradient: linear-gradient(108deg, rgb(8, 148, 255), rgb(201, 89, 221) 34%, rgb(255, 46, 84) 68%, rgb(255, 144, 4));
+  --name-gradient: linear-gradient(108deg, rgb(255, 46, 84), rgb(255, 96, 4), rgb(8, 148, 255), rgb(0, 0, 0));
   --font-family-base: "Google Sans", "Segoe UI", sans-serif;
-  --headline-size: 80px;
+  --headline-size: 120px;
   --selection-bg: linear-gradient(
     120deg,
     rgba(255, 129, 71, 0.42) 0%,
@@ -274,16 +274,17 @@ main {
 }
 
 .resume-screen-inner {
-    height: 100%;
-    min-height: 100svh;
+    height: 100svh;
+    min-height: 0;
     padding:var(--resume-block-pad) var(--resume-inline-pad);
-    overflow-y:auto;
+    overflow:hidden;
     overscroll-behavior: contain
 }
 
 .resume-bento {
     width: 100%;
-    height: min(calc(100svh -(var(--resume-block-pad) * 2)), 68svh);
+    height: calc(100svh - (var(--resume-block-pad) * 2));
+    max-height: 100%;
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     grid-template-rows: repeat(8, minmax(0, 1fr));
@@ -575,7 +576,7 @@ main {
 .resume-stack-track {
     display: flex;
     flex-direction: column;
-    gap: var(--stack-gap);
+    gap: 0;
     animation: 14s linear infinite resume-stack-vertical;
     will-change:transform
 }
@@ -584,7 +585,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:var(--stack-gap)
+    gap:var(--stack-gap);
+    padding-bottom: var(--stack-gap)
 }
 
 .resume-stack-icon {
@@ -644,7 +646,7 @@ main {
     }
 
     to {
-        transform:translateY(calc(-1 *((var(--stack-slot-size) * var(--stack-items)) +(var(--stack-gap) * var(--stack-items)))))
+        transform:translateY(-50%)
     }
 }
 
@@ -906,7 +908,8 @@ h1 {
 
 .work-filter-label-text {
     display: inline-block;
-    font-family: "Google Sans", sans-serif;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 600;
     line-height: 1;
     white-space: nowrap;
     background: var(--name-gradient);
@@ -1034,7 +1037,8 @@ h1 {
     display: inline-flex;
     align-items: baseline;
     gap: .22em;
-    font-family: "Google Sans", sans-serif;
+    font-weight: 500;
+    font-family: "Instrument Serif", Georgia, serif;
     white-space: nowrap;
     will-change:opacity, filter, transform
 }
@@ -1543,9 +1547,15 @@ body.is-project-modal-open {
         --resume-block-pad:clamp(0.75rem, 4.2vw, 1.05rem)
     }
 
+    .resume-screen-inner {
+        height: 100%;
+        min-height: 100svh;
+        overflow-y:auto;
+    }
+
     .resume-bento {
         height: auto;
-        min-height: calc(100svh -(var(--resume-block-pad) * 2));
+        min-height: calc(100svh - (var(--resume-block-pad) * 2));
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-auto-rows: minmax(116px, auto);
         justify-content: stretch;
@@ -1943,8 +1953,4 @@ a[data-work-link] .link-extension {
         display:none
     }
 
-    .resume-stack-track {
-        animation: none;
-        transform: translateY(0)
-    }
 }
