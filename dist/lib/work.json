@@ -1,0 +1,44 @@
+{
+  "projects": [
+    {
+      "name": "melanoma",
+      "year": 2026,
+      "link": "/projects/melanoma",
+      "screenshot": "assets/project-thumbnails/skin-cancer-poster.png",
+      "description": "An informative poster for my Advanced Placement Biology class that provides an overview of different varients of skin cancer, their symptoms, risk factors, statistics, and prevention tips.",
+      "buttons": [
+        { "label": "github", "link": "https://github.com/benpark202/melanoma" }
+      ]
+    },
+    {
+      "name": "hangman",
+      "year": 2026,
+      "link": "/projects/hangman",
+      "description": "A polished word-guessing game with keyboard controls, hint support, and a responsive TypeScript-driven interface.",
+      "buttons": [
+        { "label": "play", "link": "/projects/hangman" }
+      ]
+    },
+    {
+      "name": "matchai",
+      "year": 2026,
+      "screenshot": "assets/project-thumbnails/matchai-thumbnail.png",
+      "description": "Matchai is a modern life dashboard in development that aims to simplify complex page setups by providing a single view of all routines and to-do’s at a glance. It eliminates the need for hours of investment using customizable widgets from calendars, daily tasks, workouts, and more."
+    },
+    {
+      "name": "wayvilo",
+      "year": 2025,
+      "screenshot": "assets/project-thumbnails/wayvilo-thumbnail.png",
+      "description": "Wayvilo was a Washington Metro PWA that provided users a simple platform to plan their trip on DC transit. It functioned similarly to the app, “Transit,” built on Node.js and a combination of transit API's and GTFS feeds to predict train headways and fare costs. "
+    },
+    {
+      "name": "pask",
+      "year": 2025,
+      "screenshot": "assets/project-thumbnails/pask-thumbnail.png",
+      "description": "Pask was my submission for the 2025 WWDC Student Swift Challenge, which aimed to teach the fundamentals of online security in an fun and engaging way. Inspired off of Duolingo's gamified design, users were challenged to secure a vault by completing quests. Users redeem “key fragments” by completing security questions and gaining knowledge. ",
+      "buttons": [
+        { "label": "github", "link": "https://github.com/benpark202/pask" }
+      ]
+    }
+  ] 
+}

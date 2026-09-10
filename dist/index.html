@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ben park</title>
+    <meta name="description" content="Benjamin Park's portfolio: projects, GitHub, LinkedIn, and resume."/>
+    <meta name="keywords" content="Benjamin Park, Ben Park, portfolio, software engineer, web developer, projects"/>
+    <meta name="author" content="Benjamin Park" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://benpark.surge.sh/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ben park" />
+    <meta property="og:title" content="Ben Park | Portfolio" />
+    <meta
+      property="og:description"
+      content="Benjamin Park's portfolio: projects, GitHub, LinkedIn, and resume."
+    />
+    <meta property="og:url" content="https://benpark.surge.sh/" />
+    <meta property="og:image" content="https://benpark.surge.sh/assets/avatar.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ben Park | Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Benjamin Park's portfolio: projects, GitHub, LinkedIn, and resume."
+    />
+    <meta name="twitter:image" content="https://benpark.surge.sh/assets/avatar.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Instrument+Serif:ital@0;1&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="greeting-row">
+        <span class="greeting-avatar" aria-hidden="true"></span>
+        <h1 id="greeting">hi, i'm ben.</h1>
+        <div id="work-filter" class="work-filter is-hidden" aria-hidden="true">
+          <button
+            id="work-filter-toggle"
+            class="work-filter-toggle"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            <span class="work-filter-label">
+              <span id="work-filter-current-year" class="work-filter-label-text">over the years</span>
+              <svg class="work-filter-squiggle" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M1 9 C6 9 6 3 13 3 C20 3 20 9 27 9 C34 9 34 3 41 3 C48 3 48 9 55 9 C62 9 62 3 69 3 C76 3 76 9 83 9 C90 9 90 3 97 3 C104 3 104 9 111 9 C116 9 118 6 119 5"/>
+              </svg>
+            </span>
+            <span class="material-symbols-rounded material-glyph work-filter-arrow">expand_circle_down</span>
+          </button>
+          <div id="work-filter-menu" class="work-filter-menu" role="listbox" aria-label="filter work by year"></div>
+        </div>
+      </div>
+      <a id="projects-toggle" href="#" aria-expanded="false">
+        <span class="hover-icon projects-toggle-icon" aria-hidden="true">
+          <span class="material-symbols-rounded material-glyph projects-glyph projects-glyph-default">category</span>
+          <span class="material-symbols-rounded material-glyph projects-glyph projects-glyph-back">arrow_circle_left</span>
+        </span>
+        <span class="projects-label">work</span>
+      </a>
+      <a
+        class="has-extension"
+        data-secondary-link
+        href="https://github.com/benpark202"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="hover-icon" aria-hidden="true"
+          ><i class="fa-brands fa-github"></i
+        ></span>
+        github
+        <span class="link-extension" aria-hidden="true">
+          <span class="link-slash">/</span><span class="link-handle">benpark202</span>
+        </span>
+      </a>
+      <a
+        class="has-extension"
+        data-secondary-link
+        href="https://www.linkedin.com/in/benjajpark/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="hover-icon" aria-hidden="true"
+          ><i class="fa-brands fa-linkedin"></i
+        ></span>
+        linkedin
+        <span class="link-extension" aria-hidden="true">
+          <span class="link-slash">/</span><span class="link-handle">benjajpark</span>
+        </span>
+      </a>
+      <a id="resume-link" href="#" data-secondary-link>
+        <span class="hover-icon" aria-hidden="true"
+          ><span class="material-symbols-rounded material-glyph">list_alt</span
+        ></span>
+        about
+      </a>
+      <div id="work-links" class="work-links"></div>
+    </main>
+    <section
+      id="resume-screen"
+      class="resume-screen is-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-label="resume summary"
+      tabindex="-1"
+    >
+      <div class="resume-screen-inner">
+        <div class="resume-bento" aria-label="resume summary cards">
+          <article class="resume-card resume-card-small resume-card-1">
+            <strong class="resume-experience-value">11+</strong>
+            <span class="resume-experience-subvalue">years of coding experience</span>
+          </article>
+          <article class="resume-card resume-card-small resume-card-2">
+            <strong class="resume-card-value resume-freelance-value">student</strong>
+          </article>
+          <article class="resume-card resume-card-small resume-card-4">
+            <img
+              class="resume-location-image"
+              src="./assets/location.png"
+              alt="north america globe view"
+              draggable="false"
+            />
+            <strong class="resume-location-value">based in washington dc</strong>
+          </article>
+          <article class="resume-card resume-card-center">
+            <div class="resume-photo-placeholder">
+              <img
+                class="resume-photo-image"
+                src="./assets/resume-background.png"
+                alt="ben portrait"
+                draggable="false"
+              />
+              <span class="resume-photo-name">ben</span>
+            </div>
+          </article>
+          <article class="resume-card resume-card-small resume-card-6">
+            <div class="resume-stack-scroll resume-framework-scroll" aria-label="framework icons">
+              <div class="resume-stack-track">
+                <div class="resume-stack-set">
+                  <span class="resume-stack-icon"><i class="fa-brands fa-node-js" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-react" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="devicon-tailwindcss-plain" aria-hidden="true"></i></span>
+                </div>
+                <div class="resume-stack-set" aria-hidden="true">
+                  <span class="resume-stack-icon"><i class="fa-brands fa-node-js" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-react" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="devicon-tailwindcss-plain" aria-hidden="true"></i></span>
+                </div>
+              </div>
+            </div>
+            <span class="resume-card-label">frameworks</span>
+          </article>
+          <article class="resume-card resume-card-small resume-card-7">
+            <div class="resume-stack-scroll" aria-label="language tech stack icons">
+              <div class="resume-stack-track">
+                <div class="resume-stack-set">
+                  <span class="resume-stack-icon"><i class="fa-brands fa-js" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-java" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="devicon-typescript-plain" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
+                </div>
+                <div class="resume-stack-set" aria-hidden="true">
+                  <span class="resume-stack-icon"><i class="fa-brands fa-js" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-java" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="devicon-typescript-plain" aria-hidden="true"></i></span>
+                  <span class="resume-stack-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
+                </div>
+              </div>
+            </div>
+            <span class="resume-card-label">language tech stack</span>
+          </article>
+          <article class="resume-card resume-card-small resume-card-10">
+            <strong class="resume-ml-value">
+              <span class="resume-ml-text">cs</span>
+            </strong>
+            <span class="resume-experience-subvalue">currently studying</span>
+          </article>
+          <article class="resume-card resume-card-small resume-card-11">
+            <img
+              class="resume-matcha-logo"
+              src="./assets/matchaiDarkLogo.png"
+              alt="matchai logo"
+              draggable="false"
+            />
+            <div class="resume-matcha-copy">
+              <strong class="resume-matcha-title">matchai</strong>
+              <span class="resume-matcha-subtitle">latest project</span>
+            </div>
+          </article>
+          <a
+            class="resume-card resume-card-small resume-card-12 resume-card-link"
+            href="https://github.com/benpark202"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="benpark202 on github"
+          >
+            <div class="resume-contact-graph" aria-hidden="true"></div>
+            <strong class="resume-contact-handle">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span>benpark202</span>
+            </strong>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      id="project-modal"
+      class="project-modal is-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="project-modal-title"
+    >
+      <div class="project-modal-backdrop" data-project-modal-close></div>
+      <div class="project-modal-panel" role="document">
+        <div class="project-modal-content">
+          <button
+            id="project-modal-close"
+            class="project-modal-close"
+            type="button"
+            aria-label="close project details"
+          >
+            <span class="material-symbols-rounded material-glyph">close_fullscreen</span>
+          </button>
+          <h2 id="project-modal-title" class="project-modal-title"></h2>
+          <p id="project-modal-description" class="project-modal-description"></p>
+          <div id="project-modal-buttons" class="project-modal-buttons"></div>
+          <div id="project-modal-title-display" class="project-modal-title-display" aria-hidden="true"></div>
+          <div id="project-modal-year-display" class="project-modal-year-display" aria-hidden="true"></div>
+          <div class="project-modal-title-track" aria-hidden="true">
+            <div id="project-modal-title-marquee" class="project-modal-title-marquee">
+              <span id="project-modal-title-run-a" class="project-modal-title-run">title ● title ● title ●</span>
+              <span id="project-modal-title-run-b" class="project-modal-title-run">title ● title ● title ●</span>
+            </div>
+          </div>
+        </div>
+        <div id="project-modal-media" class="project-modal-media is-empty">
+          <img id="project-modal-image" class="project-modal-image" alt="" />
+          <div class="project-modal-placeholder">there was a problem loading this preview.</div>
+        </div>
+      </div>
+    </div>
+    <div id="custom-cursor" class="custom-cursor" aria-hidden="true">
+      <div class="custom-cursor-shape" aria-hidden="true"></div>
+    </div>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="switch to dark mode">
+      <span class="theme-glyph" aria-hidden="true">
+        <span class="material-symbols-rounded theme-symbol theme-sun">sunny</span>
+        <span class="material-symbols-rounded theme-symbol theme-moon">dark_mode</span>
+      </span>
+    </button>
+    <script type="module" src="./lib/main.js"></script>
+  </body>
+</html>

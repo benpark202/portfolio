@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman</title>
+    <meta
+      name="description"
+      content="A clean, responsive hangman game built with HTML, CSS, and TypeScript."
+    />
+    <link rel="stylesheet" href="/projects/hangman/styles.css" />
+    <script src="/projects/hangman/script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell" aria-label="Hangman game">
+      <div class="status-strip" aria-live="polite">
+        <div>
+          <span class="status-label">Remaining</span>
+          <strong id="remaining-label">6</strong>
+        </div>
+        <div>
+          <span class="status-label">Round</span>
+          <strong id="round-label">1</strong>
+        </div>
+      </div>
+
+      <section class="board-panel" aria-label="Game board">
+        <div class="hangman-frame">
+          <div class="gallows" aria-hidden="true">
+            <div class="gallows-base"></div>
+            <div class="gallows-pole"></div>
+            <div class="gallows-beam"></div>
+            <div class="gallows-rope"></div>
+            <div class="hangman hangman-head" data-part="head"></div>
+            <div class="hangman hangman-body" data-part="body"></div>
+            <div class="hangman hangman-arm hangman-arm-left" data-part="left-arm"></div>
+            <div class="hangman hangman-arm hangman-arm-right" data-part="right-arm"></div>
+            <div class="hangman hangman-leg hangman-leg-left" data-part="left-leg"></div>
+            <div class="hangman hangman-leg hangman-leg-right" data-part="right-leg"></div>
+          </div>
+        </div>
+
+        <div class="word-panel">
+          <p class="word-label">Word</p>
+          <div id="word-display" class="word-display" aria-label="Current word"></div>
+        </div>
+
+        <div class="message-panel">
+          <p id="message" class="message" aria-live="polite">Make your first guess.</p>
+          <div class="controls">
+            <button id="new-game" class="primary-button" type="button">New Game</button>
+            <button id="hint-button" class="secondary-button" type="button">Reveal</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
