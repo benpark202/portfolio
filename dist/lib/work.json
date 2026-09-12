@@ -1,6 +1,15 @@
 {
   "projects": [
     {
+      "name": "wayvilo alpha",
+      "year": 2026,
+      "screenshot": "assets/project-thumbnails/wayvilo-thumbnail.png",
+      "description": "Wayvilo is a light weight, dedicated trip planner and information hub for the Washington Metro Area Transit Authority (WMATA). Features include real time train arrivals, route, and fare calculations, all in a beautiful design. It is currently still in alpha development!",
+      "buttons": [
+        { "label": "try now", "link": "https://wayvilo.benpark.dev" }
+      ]
+    },
+    {
       "name": "melanoma",
       "year": 2026,
       "link": "/projects/melanoma",
