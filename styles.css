@@ -909,7 +909,8 @@ h1 {
 .work-filter-label-text {
     display: inline-block;
     font-family: "Instrument Serif", Georgia, serif;
-    font-weight: 600;
+    font-size: var(--headline-size);
+    font-weight: 500;
     line-height: 1;
     white-space: nowrap;
     background: var(--name-gradient);
@@ -1499,14 +1500,39 @@ body.is-project-modal-open {
 
 @media (max-width: 980px) {
     .project-modal-panel {
+        --project-modal-title-gap: 1.65rem;
         height: auto;
         grid-template-columns: 1fr;
+        grid-auto-rows: max-content;
         max-height: calc(100svh - 1.6rem);
-        overflow-y:auto
+        overflow-y: auto;
+        overscroll-behavior-y: contain
     }
 
     .project-modal-content {
-        min-height:0
+        grid-row: 2;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        aspect-ratio: 1/1;
+        padding-top: calc(var(--project-modal-close-inset) + 42px + 1rem);
+        padding-bottom: 7.5rem;
+        justify-content: center
+    }
+
+    .project-modal-title-display {
+        max-width: calc(100% - var(--project-modal-edge-inline) * 2);
+        font-size: clamp(1.6rem, 6.5vw, 2.2rem);
+        overflow-wrap: anywhere
+    }
+
+    .project-modal-year-display {
+        font-size: clamp(1.05rem, 3.4vw, 1.2rem)
+    }
+
+    .project-modal-description {
+        flex-shrink: 0;
+        margin-top: 0
     }
 
     .project-modal-buttons {
@@ -1516,6 +1542,7 @@ body.is-project-modal-open {
     }
 
     .project-modal-media {
+        grid-row: 1;
         width: 100%;
         height: auto;
         aspect-ratio:1/1
@@ -1527,10 +1554,46 @@ body.is-project-modal-open {
 }
 
 @media (max-width: 900px) {
+    :root {
+        --headline-size: clamp(3.5rem, 12vw, 6.5rem)
+    }
+
+    .greeting-avatar {
+        display: none
+    }
+
     .greeting-row {
-        align-items: flex-start;
+        align-items: baseline;
         flex-wrap: wrap;
+        gap: .5rem 1rem;
         width:100%
+    }
+
+    .work-filter {
+        margin-left: 0;
+        max-width: 100%
+    }
+
+    .work-filter-toggle {
+        font-size: var(--headline-size);
+        max-width: 100%
+    }
+
+    .work-filter-label {
+        min-width: 0;
+        white-space: normal
+    }
+
+    .work-filter-label-text {
+        white-space: normal
+    }
+
+    .work-filter-arrow {
+        flex-shrink: 0
+    }
+
+    .work-filter.is-hidden {
+        display: none
     }
 
     #greeting {
@@ -1886,19 +1949,18 @@ a[data-work-link] .link-extension {
     transform:scale(1)
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     :root {
-        --headline-size:clamp(1.45rem, 8.2vw, 1.95rem)
+        --headline-size:clamp(3.5rem, 18.5vw, 5.5rem)
     }
 
     body {
-        align-items: flex-start;
         padding-left: clamp(1.25rem, 6vw, 1.75rem);
-        padding-top:clamp(2.2rem, 10vw, 3.4rem)
+        padding-block:clamp(2.2rem, 10vw, 3.4rem)
     }
 
     .greeting-row {
-        align-items:flex-end
+        align-items: baseline
     }
 
     .work-filter {
@@ -1910,11 +1972,16 @@ a[data-work-link] .link-extension {
     }
 
     main {
-        gap:.8rem
+        width: 100%;
+        gap:1.4rem
     }
 
-    a {
-        font-size:clamp(1.15rem, 5.5vw, 1.35rem)
+    main > a, .work-links > a {
+        font-size:clamp(1.8rem, 8.5vw, 2.7rem)
+    }
+
+    .work-links {
+        gap:1.4rem
     }
 }
 

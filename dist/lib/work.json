@@ -1,13 +1,10 @@
 {
   "projects": [
     {
-      "name": "wayvilo alpha",
+      "name": "wayvilo for septa",
       "year": 2026,
       "screenshot": "assets/project-thumbnails/wayvilo-thumbnail.png",
-      "description": "Wayvilo is a light weight, dedicated trip planner and information hub for the Washington Metro Area Transit Authority (WMATA). Features include real time train arrivals, route, and fare calculations, all in a beautiful design. It is currently still in alpha development!",
-      "buttons": [
-        { "label": "try now", "link": "https://wayvilo.benpark.dev" }
-      ]
+      "description": "Rebuilt from the ground app, Wayvilo originally starting as an app for DC is now setting its sights to the Philidelphia region. More updates will follow."
     },
     {
       "name": "melanoma",
@@ -17,15 +14,6 @@
       "description": "An informative poster for my Advanced Placement Biology class that provides an overview of different varients of skin cancer, their symptoms, risk factors, statistics, and prevention tips.",
       "buttons": [
         { "label": "github", "link": "https://github.com/benpark202/melanoma" }
-      ]
-    },
-    {
-      "name": "hangman",
-      "year": 2026,
-      "link": "/projects/hangman",
-      "description": "A polished word-guessing game with keyboard controls, hint support, and a responsive TypeScript-driven interface.",
-      "buttons": [
-        { "label": "play", "link": "/projects/hangman" }
       ]
     },
     {
