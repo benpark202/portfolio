@@ -29,6 +29,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Instrument+Serif:ital@0;1&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
@@ -119,104 +120,76 @@
       role="dialog"
       aria-modal="true"
       aria-hidden="true"
-      aria-label="resume summary"
+      aria-label="About summary"
       tabindex="-1"
     >
       <div class="resume-screen-inner">
-        <div class="resume-bento" aria-label="resume summary cards">
+        <div class="resume-bento" aria-label="About summary cards">
           <article class="resume-card resume-card-small resume-card-1">
-            <strong class="resume-experience-value">11+</strong>
-            <span class="resume-experience-subvalue">years of coding experience</span>
+            <strong class="resume-experience-value">11.5</strong>
+            <span class="resume-experience-subvalue">Years of coding experience</span>
           </article>
-          <article class="resume-card resume-card-small resume-card-2">
-            <strong class="resume-card-value resume-freelance-value">student</strong>
+          <article class="resume-card resume-card-small resume-card-2 resume-card-code">
+            <code class="resume-study-code"><span class="code-function">print</span><span class="code-parenthesis">(</span><span class="code-string">"Computer Science"</span><span class="code-parenthesis">)</span></code>
+            <span class="resume-freelance-range">Currently studying</span>
           </article>
           <article class="resume-card resume-card-small resume-card-4">
             <img
               class="resume-location-image"
               src="./assets/location.png"
-              alt="north america globe view"
+              alt="North America globe view"
               draggable="false"
             />
-            <strong class="resume-location-value">based in washington dc</strong>
+            <strong class="resume-location-value">Based in Washington, DC</strong>
           </article>
           <article class="resume-card resume-card-center">
             <div class="resume-photo-placeholder">
               <img
                 class="resume-photo-image"
                 src="./assets/resume-background.png"
-                alt="ben portrait"
+                alt="Ben portrait"
                 draggable="false"
               />
-              <span class="resume-photo-name">ben</span>
+              <span class="resume-photo-name">Ben</span>
             </div>
           </article>
-          <article class="resume-card resume-card-small resume-card-6">
-            <div class="resume-stack-scroll resume-framework-scroll" aria-label="framework icons">
-              <div class="resume-stack-track">
-                <div class="resume-stack-set">
-                  <span class="resume-stack-icon"><i class="fa-brands fa-node-js" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-react" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="devicon-tailwindcss-plain" aria-hidden="true"></i></span>
-                </div>
-                <div class="resume-stack-set" aria-hidden="true">
-                  <span class="resume-stack-icon"><i class="fa-brands fa-node-js" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-react" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="devicon-tailwindcss-plain" aria-hidden="true"></i></span>
-                </div>
-              </div>
+          <article class="resume-card resume-card-small resume-card-6 resume-card-last-project">
+            <span class="resume-card-label">Last project</span>
+            <div class="resume-laptop">
+              <img class="resume-laptop-frame" src="./assets/MacBook Air M5 15-inch Sky Blue.png" alt="" draggable="false" />
+              <img class="resume-laptop-screen" src="./assets/wayvilo-preview.png" alt="Wayvilo transit app preview on a MacBook Air" draggable="false" />
             </div>
-            <span class="resume-card-label">frameworks</span>
           </article>
-          <article class="resume-card resume-card-small resume-card-7">
-            <div class="resume-stack-scroll" aria-label="language tech stack icons">
-              <div class="resume-stack-track">
-                <div class="resume-stack-set">
-                  <span class="resume-stack-icon"><i class="fa-brands fa-js" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-java" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="devicon-typescript-plain" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
-                </div>
-                <div class="resume-stack-set" aria-hidden="true">
-                  <span class="resume-stack-icon"><i class="fa-brands fa-js" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-java" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="devicon-typescript-plain" aria-hidden="true"></i></span>
-                  <span class="resume-stack-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
-                </div>
-              </div>
+          <article class="resume-card resume-card-small resume-card-7 resume-card-photography">
+            <img class="resume-photography-image" src="./assets/photography_element.jpeg" alt="Looking up at buildings and a fire escape against a blue sky" draggable="false" />
+            <div class="resume-photography-blur" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
             </div>
-            <span class="resume-card-label">language tech stack</span>
+            <span class="resume-card-label">Photographer</span>
           </article>
-          <article class="resume-card resume-card-small resume-card-10">
-            <strong class="resume-ml-value">
-              <span class="resume-ml-text">cs</span>
-            </strong>
-            <span class="resume-experience-subvalue">currently studying</span>
+          <article class="resume-card resume-card-small resume-card-10 resume-card-transit">
+            <strong class="resume-transit-title">TRANSIT ENTHUSIEST</strong>
           </article>
-          <article class="resume-card resume-card-small resume-card-11">
-            <img
-              class="resume-matcha-logo"
-              src="./assets/matchaiDarkLogo.png"
-              alt="matchai logo"
-              draggable="false"
-            />
-            <div class="resume-matcha-copy">
-              <strong class="resume-matcha-title">matchai</strong>
-              <span class="resume-matcha-subtitle">latest project</span>
+          <article class="resume-card resume-card-small resume-card-11 resume-card-stack resume-card-stack-compact">
+            <div class="resume-stack-map" role="img" aria-label="Python surrounded by JavaScript, Java, Swift, HTML, TypeScript, Node.js, React, and Tailwind CSS">
+              <i class="resume-stack-center fa-brands fa-python" aria-hidden="true"></i>
+              <i class="resume-stack-orbit fa-brands fa-js" style="--glyph-x: 50.00%; --glyph-y: 17.20%" aria-hidden="true" title="JavaScript"></i>
+              <i class="resume-stack-orbit fa-brands fa-java" style="--glyph-x: 82.80%; --glyph-y: 50.00%" aria-hidden="true" title="Java"></i>
+              <i class="resume-stack-orbit fa-brands fa-swift" style="--glyph-x: 50.00%; --glyph-y: 82.80%" aria-hidden="true" title="Swift"></i>
+              <i class="resume-stack-orbit fa-brands fa-html5" style="--glyph-x: 17.20%; --glyph-y: 50.00%" aria-hidden="true" title="HTML"></i>
+              <i class="resume-stack-orbit devicon-typescript-plain" style="--glyph-x: 64.70%; --glyph-y: 35.30%" aria-hidden="true" title="TypeScript"></i>
+              <i class="resume-stack-orbit fa-brands fa-node-js" style="--glyph-x: 64.70%; --glyph-y: 64.70%" aria-hidden="true" title="Node.js"></i>
+              <i class="resume-stack-orbit fa-brands fa-react" style="--glyph-x: 35.30%; --glyph-y: 64.70%" aria-hidden="true" title="React"></i>
+              <i class="resume-stack-orbit devicon-tailwindcss-plain" style="--glyph-x: 35.30%; --glyph-y: 35.30%" aria-hidden="true" title="Tailwind CSS"></i>
             </div>
+            <span class="resume-card-label">Languages &amp; frameworks</span>
           </article>
           <a
             class="resume-card resume-card-small resume-card-12 resume-card-link"
             href="https://github.com/benpark202"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="benpark202 on github"
+            aria-label="benpark202 on GitHub"
           >
             <div class="resume-contact-graph" aria-hidden="true"></div>
             <strong class="resume-contact-handle">
