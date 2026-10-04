@@ -1159,12 +1159,7 @@ export const work = () => {
         String(buttonConfig?.label ?? "").trim().toLowerCase() !== "case study"
     );
     const modalButtons = [];
-    const projectNameKey = projectName.toLowerCase();
-    if (
-      projectNameKey !== "pask" &&
-      projectNameKey !== "wayvilo" &&
-      projectNameKey !== "matchai"
-    ) {
+    if (String(project?.link ?? "").trim()) {
       modalButtons.push(createProjectModalButton("open link", project?.link, true, true));
     }
     modalButtons.push(
